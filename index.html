@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="weather-container">
+
+        <!-- Header -->
+
+        <header class="app-header">
+
+            <h1>Weather App</h1>
+
+            <p>Check current weather anywhere</p>
+
+        </header>
+
+
+        <!-- Temperature Unit -->
+
+        <div class="unit-toggle">
+
+            <button
+                id="celsius-btn"
+                class="active"
+                type="button"
+            >
+                °C
+            </button>
+
+            <button
+                id="fahrenheit-btn"
+                type="button"
+            >
+                °F
+            </button>
+
+        </div>
+
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="city-input"
+                placeholder="Enter city name..."
+                autocomplete="off"
+            >
+
+            <button
+                id="search-btn"
+                type="button"
+            >
+                Search
+            </button>
+
+        </div>
+
+
+        <!-- Current Location -->
+
+        <button
+            id="location-btn"
+            type="button"
+        >
+            📍 Use My Location
+        </button>
+
+
+        <!-- Error -->
+
+        <p
+            id="error-message"
+            aria-live="polite"
+        ></p>
+
+
+        <!-- Loading -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+            <div class="spinner"></div>
+
+            <p>Loading weather...</p>
+        </div>
+
+
+        <!-- Current Weather -->
+
+        <section
+            class="weather-info hidden"
+            aria-live="polite"
+        >
+
+            <!-- Location -->
+
+            <div class="location">
+
+                <h2 id="city-name">
+                    City
+                </h2>
+
+                <p id="country">
+                    Country
+                </p>
+
+            </div>
+
+
+            <!-- Main Weather -->
+
+            <div class="main-weather">
+
+                <div
+                    class="weather-icon"
+                    id="weather-icon"
+                >
+                    ☀️
+                </div>
+
+                <div class="temperature-container">
+
+                    <p id="temperature">
+                        --°C
+                    </p>
+
+                    <p id="description">
+                        Weather condition
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Weather Details -->
+
+            <div class="weather-details">
+
+                <div class="detail">
+
+                    <span>🌡️</span>
+
+                    <p>Feels like</p>
+
+                    <strong id="feels-like">
+                        --°C
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>💧</span>
+
+                    <p>Humidity</p>
+
+                    <strong id="humidity">
+                        --%
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>💨</span>
+
+                    <p>Wind</p>
+
+                    <strong id="wind">
+                        -- km/h
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>🔽</span>
+
+                    <p>Pressure</p>
+
+                    <strong id="pressure">
+                        -- hPa
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>👁️</span>
+
+                    <p>Visibility</p>
+
+                    <strong id="visibility">
+                        -- km
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Sunrise / Sunset -->
+
+            <div class="sun-times">
+
+                <div>
+
+                    <span>🌅</span>
+
+                    <p>Sunrise</p>
+
+                    <strong id="sunrise">
+                        --:--
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>🌇</span>
+
+                    <p>Sunset</p>
+
+                    <strong id="sunset">
+                        --:--
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Forecast -->
+
+        <section
+            class="forecast hidden"
+        >
+
+            <h3>5-Day Forecast</h3>
+
+            <div
+                class="forecast-list"
+                id="forecast-list"
+            ></div>
+
+        </section>
+
+
+        <!-- Recent Searches -->
+
+        <section class="recent-searches">
+
+            <div class="recent-header">
+
+                <h3>Recent Searches</h3>
+
+                <button
+                    id="clear-history"
+                    class="clear-btn"
+                    type="button"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+            <div id="recent-list"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
